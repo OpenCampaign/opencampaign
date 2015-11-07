@@ -32,6 +32,15 @@
         </div>
       </div>
 
+      <%# if ENV['DEMO_MODE'] %>
+      <div class="form-group">
+        <%= label_tag :is_admin, 'Make user admin?', { class: 'col-sm-3 control-label', for: 'is_admin' } %>
+        <div class="col-sm-7">
+          <%= check_box_tag :is_admin, true, false, { class: 'form-control input-md', required: '', checked_value: '1', unchecked_value: '0' } %>
+        </div>
+      </div>
+      <%# end %>
+
       <div class="form-group">
         <%= label_tag :submit, '', { class: 'col-sm-3 control-label', for: 'submit' } %>
         <div class="col-sm-9">

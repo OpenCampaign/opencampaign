@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     if current_user.blank?
       redirect_to(action: failure, message: "You could not be authenticated.") and return
     else
+      current_user.add_role('admin') if ENV["DEMO_MODE"] && params[:is_admin]
       redirect_path = session[:origin_url].blank? ? root_path : session[:origin_url]
       redirect_to(redirect_path) and return
     end
