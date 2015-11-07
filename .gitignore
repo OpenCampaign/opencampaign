@@ -22,9 +22,6 @@ config/database.yml
 config/deploy.rb
 config/deploy/*.rb
 config/secrets.yml
-app/assets/stylesheets/bootstrap-variables.scss
-app/assets/stylesheets/banners.scss
-app/assets/stylesheets/application-custom.scss
 public/cmt
 public/assets
 public/dev-assets

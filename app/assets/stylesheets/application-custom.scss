@@ -1,0 +1,59 @@
+/* Wrapper for page content to push down footer */
+$footer-height: 96px;
+$footer-height-negative: -96px;
+
+/* Sticky footer styles ----------------------------------------------------- */
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto $footer-height-negative;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: $footer-height;
+}
+#footer {
+  background-color: #F5F5F5;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+#footer {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+}
+
+#wrap > .container {
+  padding-top: 0px;
+}
+.container .colophon {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+/* End sticky footer styles ------------------------------------------------- */
+
+.navbar {
+  border-radius: 0;
+}
+
+/***************
+** Typography **
+***************/
+
+p.left   { text-align: left; }
+p.right  { text-align: right; }
+p.center { text-align: center; }
