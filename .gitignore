@@ -28,7 +28,6 @@ app/assets/stylesheets/application-custom.scss
 public/cmt
 public/assets
 public/dev-assets
-lib/authentication/*_provider.rb
 
 ## Environment normalisation:
 #/.bundle
