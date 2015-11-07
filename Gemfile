@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'airbrake'
+gem 'acts_as_list'
+gem 'acts_as_taggable_on'
+gem 'attr_extras'
 gem 'awesome_nested_set', '~> 2.1.6'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bcrypt-ruby', '3.1.2'
