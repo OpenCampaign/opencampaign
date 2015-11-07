@@ -14,7 +14,7 @@ Bundler.require(*Rails.groups(:assets => %w(development test)))
 module OpenCampaign
   class Application < Rails::Application
     require 'dotenv'
-    Dotenv.load "config/.env.local", "config/.env.#{Rails.env}", "config/.env", "config/.env.example"
+    Dotenv.load ".env", "config/.env.local", "config/.env.#{Rails.env}", "config/.env", "config/.env.example"
     config.assets.initialize_on_precompile = false # Fix db/initializer woes on precomple
 
     # Settings in config/environments/* take precedence over those specified here.

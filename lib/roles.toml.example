@@ -1,10 +1,10 @@
 [roles]
   [roles.admin]
-    title     = "Administrator"
-    automated = false
+  title     = "Administrator"
+  automated = false
   [roles.manager]
-    title     = "Manager"
-    automated = false
+  title     = "Manager"
+  automated = false
   [roles.user]
-    title     = "User"
-    automated = true
+  title     = "User"
+  automated = true
