@@ -31,6 +31,10 @@
             <li class="<%= 'active' if current_page?(admin_roles_path) %>">
               <%= link_to "Manage Roles", admin_roles_path %>
             </li>
+            <li class="divider"></li>
+            <li class="<%= 'active' if current_page?(admin_issues_path) %>">
+              <%= link_to "Manage Positions", admin_issues_path %>
+            </li>
           </ul>
         </li>
       </ul>
