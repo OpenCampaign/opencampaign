@@ -15,7 +15,7 @@ OpenCampaign::Application.routes.draw do
   namespace :admin do
     resources :roles, only: [:index, :create]
     resources :issues
-    resources :md_pages
+    resources :md_pages, as: :pages
   end
 
   match '/admin', to: 'admin#index', as: 'admin', via: [:get, :post]
