@@ -1,0 +1,7 @@
+<% flash.each do |type, message| %>
+  <div class="alert <%= bootstrap_class_for(type) %> alert-dismissable fade in">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%= message.html_safe %>
+  </div>
+  <%- flash.delete(type) # Cleanup :render messages before :redirect %>
+<% end %>

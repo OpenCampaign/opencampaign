@@ -1,0 +1,57 @@
+<div class="row">
+  <h2>Edit Profile</h2>
+</div>
+
+<%= form_for @user do |form| %>
+<%= form.hidden_field :updated_at %>
+
+<fieldset>
+<legend>Registration Information</legend>
+  <div class="form-group row">
+    <div class="col-sm-2"></div>
+    <%= form.label :email, { class: 'col-sm-2 control-label', for: 'email' } %>
+    <div class="col-sm-4">
+      <%= form.text_field :email, { placeholder: "@#{ENV['SITE_DOMAIN']}", class: 'form-control input-md', disabled: 'disabled' } %>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2"></div>
+    <%= form.label :username, { class: 'col-sm-2 control-label', for: 'username' } %>
+    <div class="col-sm-4">
+      <%= form.text_field :username, { class: 'form-control input-md', disabled: 'disabled' } %>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</fieldset>
+
+<fieldset>
+<legend>Update Password</legend>
+
+  <div class="form-group row">
+    <div class="col-sm-2"></div>
+    <%= label_tag :password, 'Password', { class: 'col-sm-2 control-label', for: 'password' } %>
+    <div class="col-sm-4">
+      <%= password_field_tag :password, nil, { class: 'form-control input-md', required: '' } %>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2"></div>
+    <%= label_tag :password_confirmation, 'Confirm Password', { class: 'col-sm-2 control-label', for: 'password_confirmation' } %>
+    <div class="col-sm-4">
+      <%= password_field_tag :password_confirmation, nil, { class: 'form-control input-md', required: '' } %>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+</fieldset>
+
+<div class="form-group row">
+  <div class="col-sm-2"></div>
+  <%= form.submit "Update", { class: 'col-sm-2 btn btn-primary' } %>
+</div>
+
+<% end %>

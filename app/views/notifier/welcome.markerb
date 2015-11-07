@@ -1,0 +1,10 @@
+Welcome to <%= ENV['SITE_TITLE'] %>
+---
+
+You have successfully signed up for <%= ENV['SITE_DOMAIN'] %> and your login is <%= @basic_auth.email %>.
+
+Please [verify your identity](<%= verify_email_url(@basic_auth.token_params) %>).
+
+Once you've verified your email address you can login to the site at: [<%= login_url %>](<%= login_url %>).
+
+Thanks for joining!

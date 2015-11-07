@@ -1,0 +1,6 @@
+set :stage, :demo
+
+server "server1.eample.com", user: "deployer", roles: %w{web app db}
+#server "server2.example.com", user: "deployer", roles: %w{web app}
+
+set :branch, ENV["REVISION"] || ENV["BRANCH_NAME"] || "master"

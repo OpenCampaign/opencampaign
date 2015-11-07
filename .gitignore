@@ -1,0 +1,40 @@
+.DS_Store
+*.rbc
+.powrc
+*.swp
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+.env
+config/.env
+config/.env.local
+config/.env.production
+config/.env.production.*
+config/database.yml
+config/deploy.rb
+config/deploy/*.rb
+config/secrets.yml
+app/assets/stylesheets/bootstrap-variables.scss
+app/assets/stylesheets/banners.scss
+app/assets/stylesheets/application-custom.scss
+public/cmt
+lib/roles.toml
+lib/authentication/*_provider.rb
+
+## Environment normalisation:
+#/.bundle
+#/vendor/bundle
+#
+## these should all be checked in to normalise the environment:
+## Gemfile.lock, .ruby-version, .ruby-gemset
+#
+## unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+#.rvmrc

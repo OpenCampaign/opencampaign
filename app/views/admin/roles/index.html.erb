@@ -1,0 +1,42 @@
+<div class="row">
+  <h2>Manage User Roles</h2>
+</div>
+
+<%= form_tag(admin_roles_path, :method => "post") do %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Users</th>
+        <%- @roles.each do |role| %>
+        <th><%= role.title %></th>
+        <%- end %>
+      </tr>
+    </thead>
+    <tbody>
+      <%- @users.each do |user| %>
+        <tr id='<%= "user[#{user.id}]" %>'>
+          <td><strong><%= user.name %></strong></td>
+          <%- @roles.each do |role| %>
+            <%- user_role_id = "users[#{user.id}][roles][#{role.id}]" %>
+            <td>
+            <%- if user.has_role?(role.name.to_sym) %>
+              <%- unless role.automated? %>
+                <%= check_box_tag user_role_id, nil, true %>
+              <%- else %>
+                <strong>&#10003;</strong>
+              <%- end %>
+            <%- else %>
+              <%- unless role.automated? %>
+                <%= check_box_tag user_role_id, nil, false %>
+              <%- else %>
+                -
+              <%- end %>
+            <%- end %>
+          <%- end %>
+          </td>
+        </tr>
+      <%- end %>
+    </tbody>
+  </table>
+  <%= submit_tag "Update Roles" %>
+<% end %>

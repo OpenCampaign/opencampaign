@@ -1,0 +1,61 @@
+/* Prioritization Banners Styling / Tweaks */
+.navbar { top: 20px; }
+
+.prioritization {
+  font-size: 14px;
+  .banner, .block {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+.banner {
+  width: 100%;
+  background-color: #000;
+  color: #FFF;
+  font-weight: bold;
+  text-align: center;
+  .disclaimer {
+    font-weight: normal;
+  }
+}
+.block {
+  border-top: 1px solid #000;
+  font-size: 12px;
+}
+
+.U, .URGENT, .priority-banner-U {
+  color: #FF3 !important;
+  background-color: #C00 !important;
+}
+
+.E, .ERROR, .priority-banner-E {
+  color: #FF0 !important;
+  background-color: #00F !important;
+}
+
+.W, .WARN, .priority-banner-W {
+  color: #000 !important;
+  background-color: #FC0 !important;
+}
+
+.M, .MESSAGE, .priority-banner-M {
+  color: #FF6 !important;
+  background-color: #393 !important;
+}
+
+#prioritization-header, #prioritization-footer {
+  left: 0;
+  width: 100% !important;
+  z-index: 1337 !important;
+}
+
+#prioritization-header {
+  position: fixed;
+  top: 0;
+}
+
+#prioritization-footer {
+  position: relative;
+  bottom: 0;
+}

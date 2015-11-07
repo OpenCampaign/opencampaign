@@ -1,0 +1,6 @@
+<%- if ENV['DISPLAY_BANNERS'].to_bool == true %>
+<div class="banner U">
+	<span class="disclaimer"><%= ENV['BANNER_DISCLAIMER'] %></span>
+	<span class="prioritization-level"><%= ENV['BANNER_LEVEL'] %></span>
+</div>
+<%- end %>
