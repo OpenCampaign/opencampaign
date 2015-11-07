@@ -3,14 +3,48 @@ class Admin::MdPagesController < AdminController
     @pages = MdPage.all
   end
 
+  def new
+    @page = MdPage.new
+  end
+
   def create
-    @page = MdPage.new(title: params[:md_page][:title], content: params[:md_page][:content])
-    if @page.save
+    page = params[:md_page]
+    @page = MdPage.new(title: page[:title], content: page[:content])
+    if @page.valid?
+      @page.save
       flash[:success] = "Created #{@page.title} page successfully."
-      redirect_to admin_md_pages_path
+      redirect_to admin_pages_path
     else
-      flash[:error]   = 'Unable to create page.'
-      render(:edit, @page)
+      flash[:error]  = 'Unable to create the page due to the following errors:'
+      @page.errors.each do |error, message|
+        flash[:error] += "<br />#{error.capitalize} #{message}"
+      end
+      render :edit
     end
+  end
+
+  def edit
+    @page = MdPage.find(params[:id])
+  end
+
+  def update
+    page = params[:md_page]
+    @page = MdPage.new(title: page[:title], content: page[:content])
+    if @page.valid?
+      @page.save
+      flash[:success] = "Created #{@page.title} page successfully."
+      redirect_to admin_pages_path
+    else
+      flash[:error]  = 'Unable to update the page due to the following errors:'
+      @page.errors.each do |error, message|
+        flash[:error] += "<br />#{error.capitalize} #{message}"
+      end
+      render :edit
+    end
+  end
+
+
+  def show
+    @page = MdPage.find(params[:id])
   end
 end
