@@ -14,3 +14,7 @@
 
 production:
     url: <%= ENV['DATABASE_URL'] %>
+development:
+    url: <%= ENV['DATABASE_URL_DEVELOPMENT'] %>
+test:
+    url: <%= ENV['DATABASE_URL_TEST'] %>

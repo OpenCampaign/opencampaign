@@ -18,7 +18,6 @@ config/.env
 config/.env.local
 config/.env.production
 config/.env.production.*
-config/database.yml
 config/deploy.rb
 config/deploy/*.rb
 config/secrets.yml
