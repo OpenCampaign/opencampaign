@@ -19,4 +19,11 @@ namespace :roles do
     end
   end
 
+  desc 'Grant admin role to user_id'
+  task :grant_admin, [:email, :provider] => :environment do |t, args|
+    args.with_defaults(:provider => 'identity')
+    user = args.provider.classify.constantize.where(email: args.email).first.user
+    user.add_role('admin')
+    puts "User #{user.name} is now an admin!"
+  end
 end
