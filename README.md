@@ -10,9 +10,9 @@ Open Campaign is an Open Source platform to be used by Political Candidates at t
 
 It allows a Candidate and his or her team to manage a homepage, receive donations, organize volunteers.
 
-It allows volunteers to communicate with each other, reach out to voters, do other stuff
+It allows volunteers to communicate with each other, reach out to voters, do other stuff.
 
-It allows voters to research the candidates issues, get involved with social media, and make donations
+It allows voters to research the candidates issues, get involved with social media, and make donations.
 
 ## How to use Open Campaign
 
