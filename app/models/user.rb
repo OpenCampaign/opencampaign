@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   rolify
-  pattr_initialize :current_identity
 
   has_many :identities, dependent: :destroy
   after_save :associate_identities
@@ -48,6 +47,8 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  attr_accessor :current_identity
 
   def associate_identities
     identities.each do |identity|
