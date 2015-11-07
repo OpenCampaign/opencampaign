@@ -1,0 +1,13 @@
+[roles]
+  [roles.admin]
+    title     = "Administrator"
+    automated = false
+  [roles.candidate]
+    title     = "Candidate"
+    automated = false
+  [roles.volunteer]
+    title     = "Volunteer"
+    automated = false
+  [roles.user]
+    title     = "User"
+    automated = false
