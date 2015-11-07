@@ -1,6 +1,7 @@
 OpenCampaign::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  #config.log_level = :debug
   # Code is not reloaded between requests
   config.cache_classes = true
   config.eager_load = true
@@ -48,6 +49,7 @@ OpenCampaign::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg *.ico *.eot *.ttf *.woff *.woff2 *.tff)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -65,4 +67,5 @@ OpenCampaign::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
 end

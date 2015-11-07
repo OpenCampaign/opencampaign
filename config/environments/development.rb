@@ -26,4 +26,6 @@ OpenCampaign::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.svg *.ico *.eot *.ttf *.woff *.woff2 *.tff)
 end
