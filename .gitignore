@@ -26,6 +26,8 @@ app/assets/stylesheets/bootstrap-variables.scss
 app/assets/stylesheets/banners.scss
 app/assets/stylesheets/application-custom.scss
 public/cmt
+public/assets
+public/dev-assets
 lib/roles.toml
 lib/authentication/*_provider.rb
 
