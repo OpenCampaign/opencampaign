@@ -36,6 +36,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
+    acts_as_taggable_on (3.0.0.rc2)
+      rails (>= 3, < 5)
     addressable (2.3.8)
     airbrake (4.3.3)
       builder
@@ -320,6 +324,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
+  acts_as_taggable_on
   airbrake
   aruba
   awesome_nested_set (~> 2.1.6)
