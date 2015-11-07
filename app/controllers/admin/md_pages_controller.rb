@@ -8,18 +8,15 @@ class Admin::MdPagesController < AdminController
   end
 
   def create
-    page = params[:md_page]
-    @page = MdPage.new(title: page[:title], content: page[:content])
+    @page = new_with_permit('MdPage', params[:md_page])
     if @page.valid?
       @page.save
       flash[:success] = "Created #{@page.title} page successfully."
       redirect_to admin_pages_path
     else
       flash[:error]  = 'Unable to create the page due to the following errors:'
-      @page.errors.each do |error, message|
-        flash[:error] += "<br />#{error.capitalize} #{message}"
-      end
-      render :edit
+      append_object_errors_to_flash(@page)
+      render :new
     end
   end
 
@@ -28,23 +25,42 @@ class Admin::MdPagesController < AdminController
   end
 
   def update
-    page = params[:md_page]
-    @page = MdPage.new(title: page[:title], content: page[:content])
-    if @page.valid?
-      @page.save
-      flash[:success] = "Created #{@page.title} page successfully."
+    @page = MdPage.find(params[:id])
+    new_page = new_with_permit('MdPage', params[:md_page])
+    if new_page.valid?
+      update_with_permit(@page, params[:md_page])
+      flash[:success] = "Updated #{@page.title} page successfully."
       redirect_to admin_pages_path
     else
       flash[:error]  = 'Unable to update the page due to the following errors:'
-      @page.errors.each do |error, message|
-        flash[:error] += "<br />#{error.capitalize} #{message}"
-      end
+      append_object_errors_to_flash(new_page)
       render :edit
     end
   end
 
-
   def show
     @page = MdPage.find(params[:id])
+  end
+
+  private
+
+  def new_with_permit(class_string, params_hash)
+    tmp_object = class_string.constantize.new(
+      params_hash.permit(current_user.has_role?(:admin))
+    )
+    tmp_object
+  end
+
+  def update_with_permit(object, params_hash)
+    tmp_object = object.update_attributes(
+      params_hash.permit(current_user.has_role?(:admin))
+    )
+    tmp_object
+  end
+
+  def append_object_errors_to_flash(object)
+    object.errors.each do |error, message|
+      flash[:error] += "<br />#{error.capitalize} #{message}"
+    end
   end
 end
