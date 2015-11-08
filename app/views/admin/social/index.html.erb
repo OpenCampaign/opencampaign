@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= link_to "SomeUsername Facebook", edit_admin_social_path(3), class: 'btn btn-primary' %>
+    <h4>Attributes</h4>
+    <dl class="dl-horizontal">
+      <dt>Page name</dt>
+      <dd>SomeUsername</dt>
+    </dl>
+  </div>
+</div>
+
+<%- @socials.each do |social| %>
+  <%= social_item social %>
+<%- end %>

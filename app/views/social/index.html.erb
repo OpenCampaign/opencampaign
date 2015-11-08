@@ -16,7 +16,11 @@
 
 <div class="container">
   <%- if @streams.to_a.empty? %>
-    No social pages have been added yet.  An admin must add them on the <%= link_to "Social Admin Page", admin_path %>
+    <div class="jumbotron">
+      <h1>No Social Integrations Yet</h1>
+      <p>No social pages have been added yet.  An admin must add them on the Social Admin Page</p>
+      <p><a class="btn btn-primary btn-lg" href="<%= admin_social_index_path %>" role="button">Go to the Social Admin Page</a></p>
+    </div>
   <%- else %>
     <%- @streams.each do |stream| %>
       <div class="row row-centered">

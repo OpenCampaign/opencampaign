@@ -9,7 +9,7 @@ module SocialHelper
       response << payload['widgetid']
       response << "\">Tweets by @".html_safe
       response << payload['username']
-      response << "</a>".html_safe # <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>".html_safe
+      response << "</a>".html_safe
     when 'facebook-page'
       response << "<div class=\"fb-page\" data-href=\"https://www.facebook.com/".html_safe
       response << payload['pagename']
