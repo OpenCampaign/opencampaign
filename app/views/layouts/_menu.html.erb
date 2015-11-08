@@ -16,9 +16,26 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_path) %>">
-          <%#= link_to 'Home', root_path %>
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Donate <strong class="caret"></strong></a>
+          <ul class="dropdown-menu">
+            <li>
+              <% if ENV['PAYPAL_CERTIFICATE'] %>
+              <ul class="list-unstyled">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="<%= ENV['PAYPAL_CERTIFICATE'] %>">
+                  <%= submit_tag "Donate with Paypal", class: 'btn btn-link btn-block' %>
+                </form>
+              </ul>
+              <% end %>
+            <li>
+          </ul>
         </li>
       </ul>
+
       <%- if current_user and current_user.has_role? :admin %>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown <%='active' if params[:controller].include?("admin") %>">
