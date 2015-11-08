@@ -5,6 +5,10 @@ class Admin::MdPagesController < AdminController
     @pages = MdPage.all
   end
 
+  def show
+    @page = MdPage.find(params[:id])
+  end
+
   def new
     @page = MdPage.new
   end
@@ -36,13 +40,9 @@ class Admin::MdPagesController < AdminController
     end
   end
 
-  def show
-    @page = MdPage.find(params[:id])
-  end
-
   def destroy
     @page = MdPage.find(params[:id])
-    if @page.destroy!
+    if @page && @page.destroy!
       flash[:success] = "Deleted #{@page.title} successfully."
       redirect_to admin_pages_path
     else
