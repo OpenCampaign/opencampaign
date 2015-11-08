@@ -24,11 +24,6 @@ class Admin::SocialController < AdminController
   end
   def update
     @social = Social.find(params[:id])
-    puts "+"*80
-    puts params[:social].inspect
-    puts "+"*80
-    puts @social.inspect
-    puts "+"*80
     params[:social][:payload] = params[:social][:payload].to_json
     if abstracted_update(@social, PERMITTED_ATTRS, params[:social])
       flash[:success] = "Updated #{@social.name} Social Integration successfully."
@@ -36,6 +31,18 @@ class Admin::SocialController < AdminController
     else
       assign_errors(@social)
       render :edit
+    end
+  end
+  def create
+    params[:social][:payload] = params[:social][:payload].to_json
+    @social = abstracted_new('Social', PERMITTED_ATTRS, params[:social])
+    if @social.valid?
+      @social.save
+      flash[:success] = "Created Social Integration successfully."
+      redirect_to(admin_social_index_path)
+    else
+      assign_errors(@social)
+      render :new
     end
   end
 end
