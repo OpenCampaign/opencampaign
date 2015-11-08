@@ -1,0 +1,12 @@
+<%-
+  button = {}
+  button[:Facebook] = 'facebook'
+  button[:Twitter] = 'twitter'
+  button[:Reddit] = 'reddit'
+  button[:Pinterest] = 'pinterest'
+  button[:LinkedIn] = 'linkedin'
+  button[:"Google+"] = 'google-plus'
+  button[:Tumblr] = 'tumblr'
+  button[:StumbleUpon] = 'stumbleupon'
+%>
+<a target="_blank" href="<%= options[:url] %>"><i class="fa fa-<%= button[options[:button_caption].to_sym] %>"></i>  <%= options[:button_caption] %></a>
