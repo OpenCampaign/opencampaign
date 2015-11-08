@@ -1,8 +1,12 @@
-# Page Title
+# Vote for Open Campaign
 
-## Sub Title
+> Because Freedom should be Free
 
-> Quote block
+### A Free and Open Source Political Campaign tool
+
+We believe anyone should be able to have a website to promote their political campaign, regardless of budget.
+
+### Basic Nav
 
 Link to the [homepage](<%= root_path %>)
 
