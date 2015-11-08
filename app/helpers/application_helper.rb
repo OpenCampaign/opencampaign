@@ -15,4 +15,8 @@ module ApplicationHelper
     content_for :title, page_title.to_s
   end
 
+  def menu_page_slugs
+    ENV['MENU_PAGES'].split(';')[0..2]
+  end
+
 end

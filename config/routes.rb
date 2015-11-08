@@ -20,9 +20,11 @@ OpenCampaign::Application.routes.draw do
   namespace :admin do
     resources :roles, only: [:index, :create]
     resources :issues
+    resources :md_pages, as: :pages
     resources :feedback, only: [:index, :show, :destroy]
   end
 
   match '/admin', to: 'admin#index', as: 'admin', via: [:get, :post]
 
+  get '/:slug', to: 'md_pages#show', as: 'md_page'
 end
