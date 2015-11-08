@@ -15,6 +15,9 @@ OpenCampaign::Application.routes.draw do
   # public feedback
   resources :feedback, only: [:new, :create]
 
+  # Social Stream
+  resources :social, only: [:index]
+
   resources :users, only: [:show, :edit, :update]
 
   namespace :admin do
