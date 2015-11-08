@@ -15,6 +15,9 @@ OpenCampaign::Application.routes.draw do
   # public feedback
   resources :feedback, only: [:new, :create]
 
+  # Social Stream
+  resources :social, only: [:index]
+
   resources :users, only: [:show, :edit, :update]
 
   namespace :admin do
@@ -22,6 +25,7 @@ OpenCampaign::Application.routes.draw do
     resources :issues
     resources :md_pages, as: :pages
     resources :feedback, only: [:index, :show, :destroy]
+    resources :social
   end
 
   match '/admin', to: 'admin#index', as: 'admin', via: [:get, :post]

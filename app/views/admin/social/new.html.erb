@@ -1,0 +1,8 @@
+<div class="row">
+  <h2 class='col-sm-12'>Create New Social Integration</h2>
+</div>
+
+<%= form_for(@social, url: new_admin_social_path) do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+  <%= submit_tag "Create New Social Integration", class: 'btn btn-primary' %>
+<% end %>

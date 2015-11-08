@@ -1,0 +1,16 @@
+<fieldset>
+<div class='form-group'>
+  <div class="col-md-12">
+    <%= form.label :name, class: 'col-sm-1' %>
+    <%= form.text_field :name, class: 'col-sm-11' %>
+  </div>
+  <div class="col-md-12">
+    <%= form.label :payload, class: 'col-sm-1' %>
+    <%= form.text_field :payload, class: 'col-sm-11' %>
+  </div>
+</div>
+</fieldset>
+
+<script>
+  var simplemde = new SimpleMDE({ element: document.getElementById("md_page_content") });
+</script>
