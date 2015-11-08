@@ -1,4 +1,6 @@
 class Admin::IssuesController < AdminController
+  PERMITTED_ATTRS = [:title, :position]
+
   def index
     @issues = Issue.all
   end
@@ -11,34 +13,31 @@ class Admin::IssuesController < AdminController
     @issue = Issue.new
   end
 
+  def create
+    @issue = abstracted_new('Issue', PERMITTED_ATTRS, params[:issue])
+    if @issue.valid?
+      @issue.save
+      flash[:info] = "Created '#{@issue.title}' issue successfully."
+      redirect_to admin_issues_path
+    else
+      assign_errors(@issue)
+      render :new
+    end
+  end
+
   def edit
     @issue = Issue.find(params[:id])
     if @issue.blank?
       flash[:error] = "Issue not found"
-      redirect_to(admin_issues_path)
-    end
-  end
-
-  def create
-    @issue = Issue.new(title: params[:issue][:title], opinion: params[:issue][:position])
-    if @issue.valid?
-      @issue.save
-      redirect_to(admin_issues_path)
-      flash[:info] = "Issue Successfully Created"
-    else
-      flash[:error] = "An error occurred while creating the position"
-      render :new
+      redirect_to admin_issues_path
     end
   end
 
   def update
     @issue = Issue.find(params[:id])
-    if Issue.new(title: params[:issue][:title],
-      opinion: params[:issue][:position]).valid?
-      @issue.update_attributes(title: params[:issue][:title],
-        opinion: params[:issue][:position])
-      flash[:info] = "Issue Successfully Updated"
-      redirect_to(admin_issues_path)
+    if abstracted_update(@issue, PERMITTED_ATTRS, params[:issue])
+      flash[:info] = "Updated '#{@issue.title}' issue successfully."
+      redirect_to admin_issues_path
     else
       assign_errors(@issue)
       render :edit
@@ -47,13 +46,12 @@ class Admin::IssuesController < AdminController
 
   def destroy
     @issue = Issue.find(params[:id])
-    unless @issue.blank?
-      @issue.delete
+    if @issue && @issue.destroy!
       flash[:info] = "Issue Successfully removed"
-      redirect_to(admin_issues_path)
+      redirect_to admin_issues_path
     else
       assign_errors(@issue)
-      redirect_to(admin_issues_path)
+      redirect_to admin_issues_path
     end
   end
 end

@@ -1,15 +1,15 @@
 <fieldset>
 <div class='form-group'>
   <div class="col-md-12">
-    <%= form.label :title, class: 'col-sm-1' %>
+    <%= form.label :title, class: 'col-sm-1', for: 'title' %>
     <%= form.text_field :title, class: 'col-sm-11' %>
   </div>
   <div class="col-md-12">
-    <%= form.label :url, class: 'col-sm-1' %>
+    <%= form.label :url, class: 'col-sm-1', for: 'slug' %>
     <%= form.text_field :slug, class: 'col-sm-4' %>
   </div>
   <div class="col-md-12">
-    <%= form.label :content, class: 'col-sm-1' %>
+    <%= form.label :content, class: 'col-sm-1', for: 'content'%>
     <%= form.text_area :content, size: '80x12', class: 'col-sm-11' %>
   </div>
 </div>
