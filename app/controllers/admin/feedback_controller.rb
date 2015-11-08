@@ -12,10 +12,10 @@ class Admin::FeedbackController < AdminController
     unless @feedback.blank?
       @feedback.delete
       flash[:info] = "Issue Successfully removed"
-      redirect_to(admin_feedbacks_path)
+      redirect_to(admin_feedbacks_index_path)
     else
       flash[:error] = "An error occurred while removing the feedback"
-      redirect_to(admin_feedbacks_path)
+      redirect_to(admin_feedbacks_index_path)
     end
   end
 end
