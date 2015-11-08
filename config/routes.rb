@@ -4,7 +4,7 @@ OpenCampaign::Application.routes.draw do
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/auth/failure', to: 'sessions#failure'
   get '/logout', to: 'sessions#destroy'
-  get '/login', to: 'sessions#new'
+  get '/login', as: 'user_login', to: 'sessions#new'
   get '/register', to: 'basic_auths#new'
   match '/users/verify-email/:basic_auth_id/:token', to: 'basic_auths#verify', as: 'verify_email', via: [:get]
   match '/users/password-reset/:basic_auth_id/:token', to: 'basic_auths#reset', as: 'password_reset', via: [:get, :post]

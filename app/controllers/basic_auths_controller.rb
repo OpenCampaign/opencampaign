@@ -16,10 +16,10 @@ class BasicAuthsController < ApplicationController
       basic_auth.identity.update_attribute(:updated_at, Time.now)
       user.add_role ENV['VERIFIED_USER_ROLE'].to_sym
       flash[:success] = "Email verified successfully. Please log in."
-      redirect_to login_path
+      redirect_to user_login_path
     else
       flash[:error] = "Email could not be verified."
-      redirect_to login_path
+      redirect_to user_login_path
     end
   end
 
@@ -36,7 +36,7 @@ class BasicAuthsController < ApplicationController
 
       Notifier.reset_password(user).deliver
       flash[:success] = "Password reset link sent."
-      redirect_to login_path
+      redirect_to user_login_path
     end
   end
 
@@ -60,10 +60,10 @@ class BasicAuthsController < ApplicationController
         basic_auth.identity.update_attribute(:updated_at, Time.now)
         Notifier.password_changed(user).deliver
         flash[:success] = "Password changed successfully."
-        redirect_to login_path
+        redirect_to user_login_path
       else
         flash[:error] = "Password could not be changed."
-        redirect_to login_path
+        redirect_to user_login_path
       end
     end
   end
