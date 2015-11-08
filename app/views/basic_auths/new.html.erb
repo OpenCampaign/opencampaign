@@ -34,7 +34,7 @@
 
       <% if ENV['DEMO_MODE'] == 'true' %>
       <div class="form-group">
-        <%= label_tag :is_admin, 'Make user admin?', { class: 'col-sm-3 control-label', for: 'is_admin' } %>
+        <%= label_tag :is_admin, 'DEMO MODE: Make user admin?', { class: 'col-sm-3 control-label', for: 'is_admin' } %>
         <div class="col-sm-1">
           <%= check_box_tag :is_admin, true, false, { class: 'checkbox', checked_value: '1', unchecked_value: '0' } %>
         </div>
