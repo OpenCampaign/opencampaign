@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm-7 center box">
     <h2 class="page-header">Create Volunteering Registration</h2>
-    <%= form_for(@feedback, url: feedback_index_path, method: :post ) do |form| %>
+    <%= form_for(@volunteer_registration, url: volunteer_registration_index_path , method: :post ) do |form| %>
     <fieldset>
       <%= render partial: 'form', locals: { form: form } %>
       <div class="form-group">
         <%= label_tag :submit, '', { class: 'col-sm-3 control-label', for: 'submit' } %>
         <div class="col-sm-9">
-          <%= submit_tag "Create Volunteer Registration", { class: 'col-sm-4 btn center btn-primary' } %>
+          <%= submit_tag "Create Volunteer Registration", { class: 'col-sm-6 btn center btn-primary' } %>
         </div>
       </div>
     </fieldset>

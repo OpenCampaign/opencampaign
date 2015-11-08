@@ -60,6 +60,7 @@ class VolunteerRegistrationController < ApplicationController
     else
       assign_errors(@volunteer_registration)
       redirect_to(volunteer_registration_index_path)
+    end
   end
 
   private

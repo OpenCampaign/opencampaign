@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108052304) do
+ActiveRecord::Schema.define(version: 20151108195644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20151108052304) do
   add_index "basic_auths", ["username"], name: "index_basic_auths_on_username", using: :btree
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string "subject",      null: false
-    t.string "first_name",   null: false
-    t.string "last_name",    null: false
-    t.string "email",        null: false
+    t.string "subject",       null: false
+    t.string "first_name",    null: false
+    t.string "last_name",     null: false
+    t.string "email_address", null: false
     t.string "phone_number"
     t.string "address"
-    t.string "comment",      null: false
+    t.text   "comment",       null: false
   end
 
   create_table "identities", force: :cascade do |t|
@@ -124,5 +124,20 @@ ActiveRecord::Schema.define(version: 20151108052304) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "volunteer_registrations", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "first_name",        null: false
+    t.string  "last_name",         null: false
+    t.string  "phone_number",      null: false
+    t.string  "address",           null: false
+    t.string  "email_address",     null: false
+    t.text    "interests",         null: false
+    t.text    "volunteer_profile", null: false
+    t.string  "employer"
+    t.string  "job_title"
+  end
+
+  add_index "volunteer_registrations", ["user_id"], name: "index_volunteer_registrations_on_user_id", using: :btree
 
 end
