@@ -2,13 +2,13 @@ module ApplicationHelper
 
   BOOTSTRAP_FLASH_MSG = {
     success: 'alert-success',
-    error:   'alert-error alert-danger',
+    notice:  'alert-info',
     alert:   'alert-block alert-warning',
-    notice:  'alert-info'
+    error:   'alert-error alert-danger'
   }
 
   def bootstrap_class_for(flash_type)
-    BOOTSTRAP_FLASH_MSG.fetch(flash_type, flash_type.to_s)
+    BOOTSTRAP_FLASH_MSG.fetch(flash_type.to_sym, flash_type.to_s)
   end
 
   def title(page_title)
