@@ -1,6 +1,6 @@
 /* Wrapper for page content to push down footer */
-$footer-height: 96px;
-$footer-height-negative: -96px;
+$footer-height: 25px;
+$footer-height-negative: -25px;
 
 /* Sticky footer styles ----------------------------------------------------- */
 html,
@@ -18,7 +18,7 @@ body {
 }
 
 /* Set the fixed height of the footer here */
-#push,
+/* #push, */
 #footer {
   height: $footer-height;
 }
@@ -39,10 +39,10 @@ body {
 #wrap > .container {
   padding-top: 0px;
 }
-.container .colophon {
+/* .container .colophon {
   margin-top: 14px;
   margin-bottom: 14px;
-}
+} */
 
 /* End sticky footer styles ------------------------------------------------- */
 

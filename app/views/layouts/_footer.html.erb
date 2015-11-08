@@ -1,14 +1,11 @@
 <div class="container">
-  <div class="col-md-10">
-    <p class="colophon center">
-      <a href="#">Contact Us</a> | <a href="#">Parent Organization</a>
-    </p>
-  </div>
-  <div class="col-md-2 center">
+  <div class="col-md-2 pull-right">
     <% if ENV['SOCIAL_TWITTER_USERNAME'] %>
       <a href="https://twitter.com/<%= ENV['SOCIAL_TWITTER_USERNAME'] %>"class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @<%= ENV['SOCIAL_TWITTER_USERNAME'] %></a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <% end %>
+  </div>
+  <div class="col-md-2 pull-right">
     <% if ENV['SOCIAL_TWITTER_HASHTAG'] %>
       <a href="https://twitter.com/intent/tweet?button_hashtag=<%= ENV['SOCIAL_TWITTER_HASHTAG'] %>" class="twitter-hashtag-button" <%= "data-related=\"#{ENV['SOCIAL_TWITTER_USERNAME']}\"" if ENV['SOCIAL_TWITTER_USERNAME'] %> data-dnt="true">Tweet #<%= ENV['SOCIAL_TWITTER_HASHTAG'] %></a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
