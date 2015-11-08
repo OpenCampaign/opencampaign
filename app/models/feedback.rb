@@ -1,3 +1,4 @@
+# Subject
 # First name
 # Last name
 # Email
@@ -5,5 +6,5 @@
 # Address
 # Comment
 
-class Feedback < ActiveRecord
+class Feedback < ActiveRecord::Base
 end

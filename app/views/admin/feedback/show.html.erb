@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-10 col-md-push-2">
+      <h2> Subject </h2>
+      <p><%= @feedback.subject %></p>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <h2> Contact Information </h2>
+      <ul>
+        <li>First Name: <%= @feedback.first_name %></li>
+        <li>Last Name: <%= @feedback.last_name %></li>
+        <li>Email: <%= @feedback.email %></li>
+        <li>Phone: <%= @feedback.phone_number %></li>
+        <li>Address: <%= @feedback.address %></li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <h2> Comment </h2>
+      <p><%= @feedback.comment %></p>
+    </div>
+  </div>
+</div>
