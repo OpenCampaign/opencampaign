@@ -19,7 +19,7 @@
           <%= link_to 'Home', root_path %>
         </li>
         <li class="dropdown">
-          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Donate <strong class="caret"></strong></a>
+          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Donate <i class="fa fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li>
               <% if ENV['PAYPAL_CERTIFICATE'] %>
@@ -39,7 +39,7 @@
       <%- if current_user and current_user.has_role? :admin %>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown <%='active' if params[:controller].include?("admin") %>">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<strong class="caret"></strong></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Admin <i class="fa fa-chevron-down"></i></a>
           <ul class="dropdown-menu">
             <li class"<%= 'active' if current_page?(admin_path) %>">
               <%= link_to "Admin Homepage", admin_path %>
@@ -61,7 +61,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-user fa-lg"></i>
-            <%= current_user.name %><strong class="caret"></strong>
+            <%= current_user.name %> <i class="fa fa-chevron-down"></i>
             <ul class="dropdown-menu">
               <li><%= link_to "Edit profile", edit_user_path(current_user) %></li>
               <li><%= link_to "Sign Out", logout_path %><li>
@@ -69,7 +69,7 @@
           </a>
         </li>
         <%- else %>
-        <li><%= link_to "Sign In", "#{root_url}login" %><li>
+        <li><%= link_to "Sign In", user_login_path %><li>
         <%- end %>
         </li>
       </ul>
