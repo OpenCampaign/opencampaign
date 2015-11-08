@@ -27,13 +27,11 @@ class Admin::MdPagesController < AdminController
 
   def update
     @page = MdPage.find(params[:id])
-    new_page = abstracted_new('MdPage', PERMITTED_ATTRS, params[:md_page])
-    if new_page.valid?
-      abstracted_update(@page, PERMITTED_ATTRS, params[:md_page])
+    if abstracted_update(@page, PERMITTED_ATTRS, params[:md_page])
       flash[:success] = "Updated #{@page.title} page successfully."
       redirect_to admin_pages_path
     else
-      assign_errors(new_page)
+      assign_errors(@page)
       render :edit
     end
   end

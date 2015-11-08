@@ -2,7 +2,7 @@
   <h2 class='col-sm-12'>Edit Page</h2>
 </div>
 
-<%= form_for(@page, url: admin_page_path(@page), method: :put) do |form| %>
+<%= form_for(@page, url: admin_page_path(@page.id), method: :put) do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
   <%= submit_tag "Update Page", class: 'btn btn-primary'  %>
 <% end %>
