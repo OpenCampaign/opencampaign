@@ -4,5 +4,5 @@
 
 <%= form_for(@page, url: admin_pages_path, method: :post) do |form| %>
   <%= render partial: 'form', locals: { form: form } %>
-  <%= submit_tag "Create Page", class: 'btn btn-primary col-sm-offset-1' %>
+  <%= submit_tag "Create Page", class: 'btn btn-primary' %>
 <% end %>
