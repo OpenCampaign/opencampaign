@@ -1,11 +1,27 @@
-<div class="row col-sm-12">
-  <h2>Manage Pages</h2>
+<div class="row">
+  <h2 class="col-sm-12">
+    <span class="col-sm-10">Manage Pages</span>
+    <span class="col-sm-2">
+      <%= link_to 'Create New Page', new_admin_page_path, class: 'btn btn-primary' %>
+    </span>
+  </h2>
 </div>
 
-<%= link_to 'Create New Page', new_admin_page_path %>
-
-<ul>
-<% @pages.each do |page| %>
-  <li><%= link_to page.title, admin_page_path(page) %></li>
-<% end %>
-</ul>
+<table class='table table-hover'>
+  <thead>
+    <th>Page Title</th>
+    <th>Actions</th>
+  </thead>
+  <% @pages.each do |page| %>
+  <tr>
+    <td><%= page.title %></td>
+    <td>
+      <%= link_to 'View', md_page_path(page) %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Edit', edit_admin_page_path(page) %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Delete', admin_page_path(page), method: :delete %>
+    </td>
+  </tr>
+  <% end %>
+</table>

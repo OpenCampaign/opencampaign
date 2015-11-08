@@ -14,8 +14,7 @@ class Admin::MdPagesController < AdminController
       flash[:success] = "Created #{@page.title} page successfully."
       redirect_to admin_pages_path
     else
-      flash[:error]  = 'Unable to create the page due to the following errors:'
-      append_object_errors_to_flash(@page)
+      assign_errors(@page)
       render :new
     end
   end
@@ -32,14 +31,24 @@ class Admin::MdPagesController < AdminController
       flash[:success] = "Updated #{@page.title} page successfully."
       redirect_to admin_pages_path
     else
-      flash[:error]  = 'Unable to update the page due to the following errors:'
-      append_object_errors_to_flash(new_page)
+      assign_errors(new_page)
       render :edit
     end
   end
 
   def show
     @page = MdPage.find(params[:id])
+  end
+
+  def destroy
+    @page = MdPage.find(params[:id])
+    if @page.destroy!
+      flash[:success] = "Deleted #{@page.title} successfully."
+      redirect_to admin_pages_path
+    else
+      assign_errors(@page)
+      redirect_to admin_pages_path
+    end
   end
 
   private
