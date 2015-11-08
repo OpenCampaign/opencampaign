@@ -22,7 +22,7 @@ class FeedbackController < ApplicationController
       redirect_to(root_path)
       flash[:info] = "Feedback Successfully Created"
     else
-      flash[:error] = "An error occurred while creating the position"
+      assign_errors(@feedback)
       render :new
     end
   end

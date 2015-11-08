@@ -40,7 +40,7 @@ class Admin::IssuesController < AdminController
       flash[:info] = "Issue Successfully Updated"
       redirect_to(admin_issues_path)
     else
-      flash[:error] = "Invalid entries were submitted!"
+      assign_errors(@issue)
       render :edit
     end
   end
@@ -52,7 +52,7 @@ class Admin::IssuesController < AdminController
       flash[:info] = "Issue Successfully removed"
       redirect_to(admin_issues_path)
     else
-      flash[:error] = "An error occurred while removing the issue"
+      assign_errors(@issue)
       redirect_to(admin_issues_path)
     end
   end
