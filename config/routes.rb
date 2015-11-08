@@ -24,6 +24,7 @@ OpenCampaign::Application.routes.draw do
     resources :issues
     resources :md_pages, as: :pages
     resources :feedback, only: [:index, :show, :destroy]
+    resources :volunteers
   end
 
   match '/admin', to: 'admin#index', as: 'admin', via: [:get, :post]

@@ -31,6 +31,7 @@ class VolunteerRegistrationController < ApplicationController
       abstracted_new('VolunteerRegistration', PERMITTED_ATTRS,
                      params[:volunteer_registration])
     if @volunteer_registration.valid?
+      @volunteer_registration.user_id = current_user.id
       @volunteer_registration.save
       flash[:success] = "Volunteer Registration Successfully Created"
       redirect_to(volunteer_registration_path(@volunteer_registration.id))

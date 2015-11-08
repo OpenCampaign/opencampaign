@@ -1,25 +1,29 @@
 <div class="row">
   <div class="col-md-12">
-    <thead>
-      <th>Name</th>
-      <th>Email Address</th>
-      <th>Phone Number</th>
-      <th>Employer</th>
-      <th>Job Title</th>
-    </thead>
+    <table class="table table-striped">
+      <thead>
+        <th>Name</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Employer</th>
+        <th>Job Title</th>
+        <th>Interests</th>
+        <th>Volunteered Skills</th>
+      </thead>
 
-    <tbody>
-    <% @volunteers.all.each do |volunteer| %>
-      <tr  class='clickable-row' data-href="#{admin_volunteers_path(volunteer.id)">
-        <td><%= volunteer.user.name %></td>
-        <td><%= volunteer.user.email %></td>
-        <td><%= volunteer.user.phone %></td>
-        <td><%= volunteer.employer %></td>
-        <td><%= volunteer.job_title %></td>
-        <td><%= volunteer.interests %></td>
-        <td><%= volunteer.volunteer_profile %></td>
-      </tr>
-    <% end %>
-    </tbody>
+      <tbody>
+      <% @volunteers.all.each do |volunteer| %>
+        <tr class='clickable-row' data-href="#{admin_volunteers_path(volunteer.id)}">
+          <td><%= volunteer.user.name %></td>
+          <td><%= volunteer.user.email %></td>
+          <td><%= volunteer.user.phone %></td>
+          <td><%= volunteer.employer %></td>
+          <td><%= volunteer.job_title %></td>
+          <td><%= volunteer.interests %></td>
+          <td><%= volunteer.volunteer_profile %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -55,6 +55,9 @@
         <li>
           <%= link_to "Volunteer Registration", volunteer_registration_index_path %>
         </li>
+        <li>
+          <%= link_to "Positions", issues_path %>
+        </li>
       </ul>
 
       <%- if current_user and current_user.has_role? :admin %>
