@@ -1,5 +1,5 @@
 namespace :pages do
-  desc 'Create ENV specified pages'
+  desc "Create pages specified in ENV['MENU_PAGES']"
   task :create => :environment do
     pages = ENV['MENU_PAGES'].split(';')
     Rails.logger.debug("Pages: #{pages}")
