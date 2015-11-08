@@ -1,0 +1,42 @@
+<div class="form-group">
+  <%= label_tag :subject, 'Subject', { class: 'col-sm-3 control-label', for: 'subject' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :subject, { placeholder: "I've got a question", class: 'form-control input-md', required: '' } %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :first_name, 'First Name', { class: 'col-sm-3 control-label', for: 'first_name' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :first_name, { placeholder: "jane", class: 'form-control input-md', required: '' } %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :last_name, 'Last Name', { class: 'col-sm-3 control-label', for: 'last_name' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :last_name, { placeholder: "doe", class: 'form-control input-md', required: '' } %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :email, 'Email', { class: 'col-sm-3 control-label', for: 'email' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :email, { placeholder: "jane.doe@example.com", class: 'form-control input-md', required: '' } %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :phone_number, 'Phone Number', { class: 'col-sm-3 control-label', for: 'phone_number' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :phone_number, { placeholder: "(123) 456-7890", class: 'form-control input-md' } %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :address, 'Address', { class: 'col-sm-3 control-label', for: 'address' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :address, { placeholder: "P. Sherman 42 Wallaby Way", class: 'form-control input-md'} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :comment, 'Feedback Message', { class: 'col-sm-3 control-label', for: 'comment' } %>
+  <div class="col-sm-7">
+    <%= form.text_area :comment, { placeholder: "I'd love to discuss your positions on Pirates", class: 'form-control input-md'} %>
+  </div>
+</div>
