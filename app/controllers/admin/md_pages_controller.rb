@@ -1,5 +1,5 @@
 class Admin::MdPagesController < AdminController
-  PERMITTED_ATTRS = [:title, :content]
+  PERMITTED_ATTRS = [:title, :content, :slug]
 
   def index
     @pages = MdPage.all
