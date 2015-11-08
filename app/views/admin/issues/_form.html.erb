@@ -1,12 +1,12 @@
 <div class="form-group">
   <%= label_tag :title, 'Title', { class: 'col-sm-3 control-label', for: 'title' } %>
   <div class="col-sm-7">
-    <%= form.text_field :title, { placeholder: "World Domination", class: 'form-control input-md', required: '' } %>
+    <%= form.text_field :title, { placeholder: "Position Title", class: 'form-control input-md', required: '' } %>
   </div>
 </div>
 <div class="form-group">
   <%= label_tag :position, 'Position', { class: 'col-sm-3 control-label', for: 'position' } %>
   <div class="col-sm-7">
-    <%= form.text_field :position, { placeholder: "For it!", class: 'form-control input-md', required: '' } %>
+    <%= form.text_area :position, placeholder: "Position description", required: '' %>
   </div>
 </div>

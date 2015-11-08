@@ -1,16 +1,24 @@
 <div class="row">
-  <div class="col-md-12">
+  <h2>
+    <span class="col-sm-10">Manage Platform</span>
+    <span class="col-sm-2">
+      <%= link_to 'Create Position', new_admin_issue_path, class: 'btn btn-primary' %>
+    </span>
+  </h2>
+</div>
+
+<div class="row">
+  <div>
     <div class="col-md-4">
-      <h3> Title </h3>
+      <h4>Title</h4>
     </div>
     <div class="col-md-4">
-      <h3> Position </h3>
+      <h4>Position</h4>
     </div>
     <div class="col-md-2">
-      <%= link_to 'Create Position', new_admin_issue_path,  { class: 'col-sm-2 btn' } %>
     </div>
   </div>
-<% @issues.all.each do |issue| %>
+  <%- @issues.all.each do |issue| %>
   <div class="col-md-12">
     <div class="col-md-4 col-md-push-2">
       <%= issue.title %>
@@ -22,5 +30,5 @@
       <%= link_to "Edit", edit_admin_issue_path(issue.id) %> / <%= link_to "Delete", admin_issue_path(issue.id), method: :delete %>
     </div>
   </div>
-<% end %>
+  <%- end %>
 </div>
