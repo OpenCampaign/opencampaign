@@ -14,6 +14,8 @@ OpenCampaign::Application.routes.draw do
   resources :issues, only: [:index]
   # public feedback
   resources :feedback, only: [:new, :create]
+  # volunteer registration pages
+  resources :volunteer_registration
 
   resources :users, only: [:show, :edit, :update]
 

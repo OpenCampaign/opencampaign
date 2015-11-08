@@ -49,6 +49,12 @@
             <li>
           </ul>
         </li>
+        <li>
+          <%= link_to "Feedback", new_feedback_path %>
+        </li>
+        <li>
+          <%= link_to "Volunteer Registration", volunteer_registration_index_path %>
+        </li>
       </ul>
 
       <%- if current_user and current_user.has_role? :admin %>

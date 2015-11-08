@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :current_identity
 
   has_many :identities, dependent: :destroy
+  has_one :volunteer_registration
   after_save :associate_identities
 
   validates_presence_of :identities

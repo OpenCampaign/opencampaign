@@ -11,7 +11,7 @@ class FeedbackController < ApplicationController
       subject: params[:feedback][:subject],
       first_name: params[:feedback][:first_name],
       last_name: params[:feedback][:last_name],
-      email: params[:feedback][:email],
+      email_address: params[:feedback][:email_address],
       phone_number: params[:feedback][:phone_number],
       address: params[:feedback][:address],
       comment: params[:feedback][:comment]

@@ -1,0 +1,24 @@
+<div class="form-group">
+  <%= label_tag :interests, 'Interests', { class: 'col-sm-3 control-label', for: 'interests' } %>
+  <div class="col-sm-7">
+    <%= form.text_area :interests, { placeholder: "peace, freedom, prosperity, equality", class: 'form-control input-md'} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :volunteer_profile, 'Volunteered Skills', { class: 'col-sm-3 control-label', for: 'volunteer_profile' } %>
+  <div class="col-sm-7">
+    <%= form.text_area :volunteer_profile, { placeholder: "Please list any and all skills you would be willing to contribute as a volunteer", class: 'form-control input-md'} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :employer, 'Employer', { class: 'col-sm-3 control-label', for: 'employer' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :employer, { placeholder: "Optional", class: 'form-control input-md'} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :job_title, 'Job Title', { class: 'col-sm-3 control-label', for: 'job_title' } %>
+  <div class="col-sm-7">
+    <%= form.text_field :job_title, { placeholder: "Optional", class: 'form-control input-md'} %>
+  </div>
+</div>
