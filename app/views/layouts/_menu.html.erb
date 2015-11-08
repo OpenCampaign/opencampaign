@@ -15,26 +15,22 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li class"<%= 'active' if current_page?(issues_path) %>">
+          <%= link_to "Platform", issues_path %>
+        </li>
+        <li class"<%= 'active' if current_page?(new_feedback_path) %>">
+          <%= link_to "Contact", new_feedback_path %>
+        </li>
+        <li class"<%= 'active' if current_page?(social_index_path) %>">
+          <%= link_to "Social", social_index_path %>
+        </li>
         <%- menu_page_slugs.each do |url_slug| %>
           <li class="<%= 'active' if current_page?("#{root_path}#{url_slug}") %>">
             <%= link_to url_slug.capitalize, "#{root_path}#{url_slug}" %>
           </li>
         <%- end %>
-        <li class="">
-          <%= link_to "Social", social_index_path %>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i> Share <i class="fa fa-chevron-down"></i></a>
-          <ul id="social" class="dropdown-menu">
-            <li><%= facebook_button :static_link => true %></li>
-            <li><%= twitter_button :static_link => true %></li>
-            <li><%= pinterest_button :static_link => true %></li>
-            <li><%= reddit_button :static_link => true %></li>
-            <li><%= linkedin_button :static_link => true %></li>
-            <li><%= google_plus_button :static_link => true %></li>
-            <li><%= tumblr_button :static_link => true %></li>
-            <li><%= stumble_upon_button :static_link => true %></li>
-          </ul>
+        <li class"<%= 'active' if current_page?(volunteer_registration_index_path) %>">
+          <%= link_to "Volunteer", new_volunteer_registration_path %>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">  Donate <i class="fa fa-chevron-down"></i></a>
@@ -51,15 +47,6 @@
               <% end %>
             <li>
           </ul>
-        </li>
-        <li>
-          <%= link_to "Feedback", new_feedback_path %>
-        </li>
-        <li>
-          <%= link_to "Volunteer Registration", volunteer_registration_index_path %>
-        </li>
-        <li>
-          <%= link_to "Positions", issues_path %>
         </li>
       </ul>
 
@@ -97,6 +84,21 @@
         <%- else %>
         <li><%= link_to "Sign In", user_login_path %><li>
         <%- end %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i> Share <i class="fa fa-chevron-down"></i></a>
+          <ul id="social" class="dropdown-menu">
+            <li><%= facebook_button :static_link => true %></li>
+            <li><%= twitter_button :static_link => true %></li>
+            <li><%= pinterest_button :static_link => true %></li>
+            <li><%= reddit_button :static_link => true %></li>
+            <li><%= linkedin_button :static_link => true %></li>
+            <li><%= google_plus_button :static_link => true %></li>
+            <li><%= tumblr_button :static_link => true %></li>
+            <li><%= stumble_upon_button :static_link => true %></li>
+          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
