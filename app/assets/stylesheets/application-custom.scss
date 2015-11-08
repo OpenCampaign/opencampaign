@@ -57,3 +57,10 @@ body {
 p.left   { text-align: left; }
 p.right  { text-align: right; }
 p.center { text-align: center; }
+
+/******************
+** Social Shares **
+******************/
+#social > li > a > i {
+  width: 15px;
+}

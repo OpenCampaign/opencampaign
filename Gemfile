@@ -27,7 +27,7 @@ gem 'rolify'
 gem 'sass-rails'
 gem 'state_machine'
 gem 'toml-rb'
-#gem 'shareable' # For social media integrations
+gem 'shareable' # For social media integrations
 
 group :production do
   gem 'rails_12factor'
