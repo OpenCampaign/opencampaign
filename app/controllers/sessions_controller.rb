@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     session[:origin_url] = nil
     flash[:notice] = "You have successfully signed out."
-    render status: 200, layout: true, text: nil and return
+    redirect_to root_path
   end
 
   def failure
