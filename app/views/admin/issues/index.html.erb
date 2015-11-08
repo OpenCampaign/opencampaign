@@ -8,25 +8,23 @@
 </div>
 
 <div class="row">
-  <div>
-    <div class="col-md-4 col-md-offset-2">
+  <div class='issue-header'>
+    <div class="col-md-4">
       <h4>Title</h4>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
       <h4>Position</h4>
-    </div>
-    <div class="col-md-2">
     </div>
   </div>
   <%- @issues.all.each do |issue| %>
-  <div>
-    <div class="col-md-4 col-md-offset-2">
+  <div class='issue'>
+    <div class="col-md-4">
       <%= issue.title %>
     </div>
     <div class="col-md-4">
       <%= issue.opinion %>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
       <%= link_to "Edit", edit_admin_issue_path(issue.id) %> / <%= link_to "Delete", admin_issue_path(issue.id), method: :delete %>
     </div>
   </div>

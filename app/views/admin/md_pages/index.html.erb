@@ -7,14 +7,14 @@
   </h2>
 </div>
 
-<table class='table table-hover'>
+<table class='table table-hover md-page'>
   <thead>
     <th>URL</th>
     <th>Page Title</th>
     <th>Actions</th>
   </thead>
   <% @pages.each do |page| %>
-  <tr>
+  <tr class='md-page'>
     <td><%= page.slug %></td>
     <td><%= page.title %></td>
     <td>
