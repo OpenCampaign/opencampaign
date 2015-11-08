@@ -10,8 +10,9 @@ OpenCampaign::Application.routes.draw do
   match '/users/password-reset/:basic_auth_id/:token', to: 'basic_auths#reset', as: 'password_reset', via: [:get, :post]
   match '/users/forgot-password', to: 'basic_auths#forgot', as: 'forgot_password', via: [:get, :post]
 
+  # public issues view
+  resources :issues, only: [:index]
   # public feedback
-
   resources :feedback, only: [:new, :create]
 
   resources :users, only: [:show, :edit, :update]
