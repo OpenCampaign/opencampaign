@@ -10,7 +10,7 @@ namespace :pages do
         page = MdPage.new(
           title: "#{page_slug.capitalize}",
           slug: page_slug,
-          content: "# #{page_slug.capitalize}"
+          content: "## Coming Soon!"
         )
         page.save if page.valid?
         Rails.logger.debug "Done"
