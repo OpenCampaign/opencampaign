@@ -75,6 +75,11 @@ class ApplicationController < ActionController::Base
   end
 
   def abstracted_update(object, permitted_params, params_hash)
+    puts "*"*80
+    puts object
+    puts "*"*80
+    puts params_hash
+    puts "*"*80
     sanitized_hash = {}
     permitted_params.each do |key|
       sanitized_hash[key.to_sym] = params_hash.fetch(key.to_sym)
