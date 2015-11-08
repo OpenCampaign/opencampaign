@@ -66,6 +66,22 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  def abstracted_new(class_string, permitted_params, params_hash)
+    sanitized_hash = {}
+    permitted_params.each do |key|
+      sanitized_hash[key.to_sym] = params_hash.fetch(key.to_sym)
+    end
+    class_string.constantize.new( sanitized_hash )
+  end
+
+  def abstracted_update(object, permitted_params, params_hash)
+    sanitized_hash = {}
+    permitted_params.each do |key|
+      sanitized_hash[key.to_sym] = params_hash.fetch(key.to_sym)
+    end
+    object.update_attributes( sanitized_hash )
+  end
+
   def find_prioritization object
     unless object.prioritization.blank?
       @prioritization = Prioritization.find(object.prioritization.id)
