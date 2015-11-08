@@ -25,5 +25,5 @@ OpenCampaign::Application.routes.draw do
 
   match '/admin', to: 'admin#index', as: 'admin', via: [:get, :post]
 
-  #get '/:slug', to: 'md_pages#show', as: 'md_page'
+  get '/:slug', to: 'md_pages#show', as: 'md_page'
 end
