@@ -1,0 +1,8 @@
+<div class="row">
+  <h2 class='col-sm-12'>Edit Social Integration</h2>
+</div>
+
+<%= form_for(@social, url: admin_social_path(@social.id), method: :put) do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+  <%= submit_tag "Update Social Integration", class: 'btn btn-primary'  %>
+<% end %>

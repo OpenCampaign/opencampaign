@@ -3,6 +3,9 @@ class Admin::SocialController < AdminController
   def index
     @socials = Social.all
   end
+  def new
+    @social = Social.new
+  end
   def edit
     @social = Social.find(params[:id])
     if @social.blank?
