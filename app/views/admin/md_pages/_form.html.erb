@@ -6,3 +6,7 @@
   <%= form.text_area :content, size: '80x12', class: 'col-sm-11' %>
 </div>
 </fieldset>
+
+<script>
+  var simplemde = new SimpleMDE({ element: document.getElementById("md_page_content") });
+</script>
