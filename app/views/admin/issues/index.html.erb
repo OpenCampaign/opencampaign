@@ -7,8 +7,8 @@
   </h2>
 </div>
 
-<div class="row">
-  <div class='issue-header'>
+<div>
+  <div class='row issue-header'>
     <div class="col-md-4">
       <h4>Title</h4>
     </div>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <%- @issues.all.each do |issue| %>
-  <div class='issue'>
+  <div class='row issue'>
     <div class="col-md-4">
       <%= issue.title %>
     </div>
